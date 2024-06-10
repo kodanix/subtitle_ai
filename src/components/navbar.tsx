@@ -1,11 +1,11 @@
 "use client";
 import Link from "next/link";
-import ThemeChanger from "./darkswitch";
+import ThemeChanger from "./Darkswitch";
 import Image from "next/image";
 import { Disclosure } from "@headlessui/react";
 
 export const Navbar = () => {
-  const navigation = ["Product", "Features", "Pricing", "Company", "Blog"];
+  const navigation = ["Product", "Features", "Pricing"];
 
   return (
     <div className="w-full">
@@ -70,7 +70,7 @@ export const Navbar = () => {
                       href="/"
                       className="w-full px-6 py-2 mt-3 text-center text-white bg-indigo-600 rounded-md lg:ml-5"
                     >
-                      Get Started
+                      Login
                     </Link>
                   </>
                 </Disclosure.Panel>
@@ -100,7 +100,7 @@ export const Navbar = () => {
             href="/"
             className="px-6 py-2 text-white bg-indigo-600 rounded-md md:ml-5"
           >
-            Get Started
+            Login
           </Link>
 
           <ThemeChanger />

@@ -1,10 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
-import { Container } from "./container";
+import { Container } from "./Container";
 
 export function Footer() {
-  const navigation = ["Product", "Features", "Pricing", "Company", "Blog"];
+  const navigation = ["Product", "Features", "Pricing"];
   const legal = ["Terms", "Privacy", "Legal"];
   return (
     <div className="relative">
@@ -31,23 +31,7 @@ export function Footer() {
             <div className="max-w-md mt-4 text-gray-500 dark:text-gray-400">
               SubtAitle is a subtitle generator for videos, reach your audience
               everywhere with subtitles! Pick the most suitable subtitle format,
-              and language. And its completely open-source.
-            </div>
-
-            <div className="mt-5">
-              <a
-                href="https://vercel.com/?utm_source=web3templates&utm_campaign=oss"
-                target="_blank"
-                rel="noopener"
-                className="relative block w-44"
-              >
-                <Image
-                  src="/img/vercel.svg"
-                  alt="Powered by Vercel"
-                  width="212"
-                  height="44"
-                />
-              </a>
+              and language.
             </div>
           </div>
 
