@@ -1,57 +1,30 @@
-import { Container } from "@/components/Container";
-import { Hero } from "@/components/Hero";
-import { SectionTitle } from "@/components/SectionTitle";
-import { Benefits } from "@/components/Benefits";
-// import { Video } from "@/components/Video";
-// import { Testimonials } from "@/components/Testimonials";
-// import { Faq } from "@/components/Faq";
-// import { Cta } from "@/components/Cta";
-// import { benefitOne, benefitTwo } from "@/components/data";
+import About from "@/components/About";
+import CallToAction from "@/components/CallToAction";
+import ScrollUp from "@/components/Common/Scrollup";
+import Contact from "@/components/Contact";
+import Faq from "@/components/Faq";
+import Features from "@/components/Features";
+import Hero from "@/components/Hero";
+import Pricing from "@/components/Pricing";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Play Next.js - SaaS Starter Kit and Boilerplate for Next.js",
+  description:
+    "Free Next.js SaaS Boilerplate and Starter Kit designed and built for SaaS startups. It comes with all necessary integrations, pages, and components you need to launch a feature-rich SaaS websites.",
+};
 
 export default function Home() {
   return (
-    <Container>
+    <main>
+      <ScrollUp />
       <Hero />
-      <SectionTitle
-        preTitle="Nextly Benefits"
-        title="Why should you use subtitles?"
-      >
-        SubtAitle is a subtitle generator for videos, reach your audience
-        everywhere with subtitles! Pick the most suitable subtitle format, and
-        language.
-      </SectionTitle>
-
-      {/* <Benefits data={benefitOne} />
-      <Benefits imgPos="right" data={benefitTwo} /> */}
-
-      {/* <SectionTitle
-        preTitle="Watch a video"
-        title="Learn how to fullfil your needs"
-      >
-        This section is to highlight a promo or demo video of your product.
-        Analysts says a landing page with video has 3% more conversion rate. So,
-        don&apos;t forget to add one. Just like this.
-      </SectionTitle>
-
-      <Video videoId="fZ0D0cnR88E" />
-
-      <SectionTitle
-        preTitle="Testimonials"
-        title="Here's what our customers said"
-      >
-        Testimonials is a great way to increase the brand trust and awareness.
-        Use this section to highlight your popular customers.
-      </SectionTitle>
-
-      <Testimonials />
-
-      <SectionTitle preTitle="FAQ" title="Frequently Asked Questions">
-        Answer your customers possible questions here, it will increase the
-        conversion rate as well as support or chat requests.
-      </SectionTitle>
-
-      <Faq /> */}
-      {/* <Cta /> */}
-    </Container>
+      <Features />
+      <About />
+      <CallToAction />
+      <Pricing />
+      <Faq />
+      <Contact />
+    </main>
   );
 }

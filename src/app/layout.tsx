@@ -1,31 +1,53 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { ThemeProvider } from "next-themes";
-import "./globals.css";
+"use client";
 
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "SubtAitle",
-  description: "Subtitle generator for videos",
-};
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import ScrollToTop from "@/components/ScrollToTop";
+/* import { SessionProvider } from "next-auth/react";
+ */ import { ThemeProvider } from "next-themes";
+import "../styles/index.css";
+import "../styles/prism-vsc-dark-plus.css";
+import ToasterContext from "./api/contex/ToasetContex";
+import { useEffect, useState } from "react";
+import PreLoader from "@/components/Common/PreLoader";
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 1000);
+  }, []);
+
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        <ThemeProvider attribute="class">
-          <Navbar />
-          <div>{children}</div>
-          <Footer />
-        </ThemeProvider>
+    <html suppressHydrationWarning={true} className="!scroll-smooth" lang="en">
+      {/*
+        <head /> will contain the components returned by the nearest parent
+        head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
+      */}
+      <head />
+
+      <body>
+        {loading ? (
+          <PreLoader />
+        ) : (
+          /*           <SessionProvider> */
+          <ThemeProvider
+            attribute="class"
+            enableSystem={false}
+            defaultTheme="light"
+          >
+            <ToasterContext />
+            <Header />
+            {children}
+            <Footer />
+            <ScrollToTop />
+          </ThemeProvider>
+          /*           </SessionProvider> */
+        )}
       </body>
     </html>
   );
